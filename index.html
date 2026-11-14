@@ -1,78 +1,58 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AHAD | ألعاب وغرف دردشة</title>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DOS</title>
 <style>
-*{box-sizing:border-box}body{font-family:Tahoma,sans-serif;background:#0f0f1a;color:#fff;margin:0;text-align:center}
-header{padding:40px 15px;background:linear-gradient(135deg,#6a00ff,#00cfff)}
-header h1{font-size:55px;margin:0}header p{font-size:20px}
-.btn{display:inline-block;margin:8px;padding:12px 25px;background:#fff;color:#000;border-radius:30px;text-decoration:none;font-weight:bold}
-section{padding:30px 15px}h2{color:#00ff88;font-size:28px}
-.grid{display:flex;flex-wrap:wrap;justify-content:center;gap:15px}
-.card{background:#1e1e2e;padding:20px;border-radius:20px;width:260px}
-.card a{display:inline-block;margin-top:10px;padding:10px 20px;background:#00ff88;color:#000;border-radius:10px;text-decoration:none;font-weight:bold}
-.rooms{background:#1a1a2e}
-.room{background:#2a2a3d;padding:20px;border-radius:20px;width:260px;text-align:right}
-.room b{font-size:18px}.online{color:#00ff88;font-size:13px}
-.chatbox{background:#22223a;max-width:500px;margin:15px auto;border-radius:20px;padding:15px;text-align:right}
-#msgs{height:200px;overflow:auto;background:#111;padding:10px;border-radius:10px;text-align:right}
-.msg{background:#333;margin:5px 0;padding:8px 12px;border-radius:10px;font-size:15px}
-input{width:70%;padding:10px;border-radius:10px;border:0}
-button{padding:10px 18px;background:#00ff88;border:0;border-radius:10px;font-weight:bold}
-</style>
-</head>
+*{box-sizing:border-box}body{margin:0;background:#0a0a0a;color:#fff;font-family:sans-serif;padding-bottom:80px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:12px;background:#111;border-bottom:2px solid #d4af37}
+.logo{font-size:32px;font-weight:900;color:#d4af37;letter-spacing:2px}
+.coins{background:#222;border:1px solid #d4af37;padding:6px 12px;border-radius:20px;color:#ffd700}
+.stars{display:flex;gap:10px;overflow:auto;padding:12px;text-align:center}
+.star{flex:0 0 60px}.star div{width:55px;height:55px;border-radius:50%;border:2px solid #d4af37;background:#333;display:flex;align-items:center;justify-content:center;font-size:22px}
+.card{margin:12px;border:2px solid #d4af37;border-radius:16px;overflow:hidden;background:#151515;text-align:center}
+.card img{width:100%;height:180px;object-fit:cover}
+.btn{background:#d4af37;color:#000;border:none;padding:10px 22px;border-radius:20px;font-weight:900;cursor:pointer}
+.room{margin:10px 12px;background:#1a1a1a;border:1px solid #d4af37;border-radius:12px;padding:12px;display:flex;justify-content:space-between}
+.nav{position:fixed;bottom:0;left:0;right:0;background:#111;border-top:2px solid #d4af37;display:flex;justify-content:space-around;padding:10px}
+.nav button{background:none;border:none;color:#fff;font-size:13px;cursor:pointer}.nav .on{color:#d4af37}
+#login{position:fixed;inset:0;background:#000;z-index:99;padding:20px;text-align:center;overflow:auto}
+input{width:100%;padding:12px;margin:8px 0;border-radius:10px;border:1px solid #d4af37;background:#222;color:#fff}
+.hidden{display:none}
+</style></head>
 <body>
-<header>
-<h1>AHAD 🎮💬</h1>
-<p>ألعاب - محادثات - غرف عامة</p>
-<a class="btn" href="#games">🎮 الألعاب</a>
-<a class="btn" href="#rooms">💬 الغرف العامة</a>
-</header>
-
-<section id="games">
-<h2>🎮 الألعاب</h2>
-<div class="grid">
-<div class="card"><h3>❌⭕ XO</h3><p>العب اكس او مع صحابك</p><a href="#" onclick="alert('لعبة XO هتشتغل قريب!')">العب</a></div>
-<div class="card"><h3>🎲 لعبة الحظ</h3><p>جرب حظك واكسب نقاط</p><a href="#" onclick="alert('انت كسبت '+Math.floor(Math.random()*100)+' نقطة!')">العب</a></div>
-<div class="card"><h3>🧩 لعبة الألغاز</h3><p>حل اللغز وخليك الأول</p><a href="#" onclick="alert('اللغز: ايه اللي ليه عين واحدة ومبيشوفش؟ .. الإبرة!')">العب</a></div>
-<div class="card"><h3>⚽ توقع النتيجة</h3><p>توقع ماتش الأهلي والزمالك</p><a href="#" onclick="alert('توقعك اتسجل!')">العب</a></div>
-</div>
-</section>
-
-<section id="rooms" class="rooms">
-<h2>💬 الغرف العامة</h2>
-<div class="grid">
-<div class="room"><b>🔥 غرفة الشباب العامة</b><p class="online">● 128 واحد اونلاين دلوقتي</p><p>دردشة عامة لكل الناس</p><a href="#chat" style="color:#00ff88">ادخل الغرفة</a></div>
-<div class="room"><b>🎮 غرفة الجيمرز</b><p class="online">● 86 واحد اونلاين</p><p>للناس اللي بتحب الألعاب</p><a href="#chat" style="color:#00ff88">ادخل الغرفة</a></div>
-<div class="room"><b>⚽ غرفة الكورة</b><p class="online">● 64 واحد اونلاين</p><p>كورة وأهلي وزمالك</p><a href="#chat" style="color:#00ff88">ادخل الغرفة</a></div>
-<div class="room"><b>🎵 غرفة الأغاني</b><p class="online">● 42 واحد اونلاين</p><p>أغاني وضحك وهزار</p><a href="#chat" style="color:#00ff88">ادخل الغرفة</a></div>
+<div id="login">
+<h1 style="font-size:60px;color:#d4af37;margin:10px">DOS</h1>
+<p style="color:#ffd700;font-size:20px">سجل مرة واحدة، حسابك محفوظ للأبد.</p>
+<input placeholder="Phone Number +201012345678">
+<input type="password" placeholder="Password">
+<input placeholder="example@gmail.com">
+<button class="btn" onclick="enter()">Join DOS Now</button>
+<p>Register Once, Your Account Saved Forever</p><p>🇫🇷 🇪🇬 🇨🇳 🇦🇪</p>
 </div>
 
-<div class="chatbox" id="chat">
-<h3 style="text-align:center">💬 محادثة الغرفة العامة - جرب تكتب</h3>
-<div id="msgs">
-<div class="msg"><b>أحمد:</b> يا جدعان حد يلعب XO؟</div>
-<div class="msg"><b>سارة:</b> انا جاهزة يلا 🎮</div>
-<div class="msg"><b>يوسف:</b> الموقع ده جامد والله 🔥</div>
+<div class="top"><div class="logo">DOS</div><div class="coins">🪙 <span id="coin">1200</span> coins</div></div>
+<div style="padding:0 12px;color:#d4af37">STARS</div>
+<div class="stars">
+<div class="star"><div>👩</div>NOOR</div><div class="star"><div>🧕</div>AMIRA</div><div class="star"><div>👩</div>SARA</div><div class="star"><div>👩</div>LINA</div><div class="star"><div>👩</div>SALMA</div><div class="star"><div>👩</div>LAYLA</div><div class="star"><div>👩</div>RANA</div>
 </div>
-<br>
-<input id="myMsg" placeholder="اكتب رسالتك هنا...">
-<button onclick="send()">ابعت</button>
-</div>
+
+<div class="card"><div style="padding:20px"><h2>العب واتعرف او كون صداقات</h2><button class="btn" onclick="playLudo()">PLAY NOW - Ludo</button><p id="ludo">Challenge friends & win coins • 2.3k playing</p></div></div>
+
+<h3 style="padding:0 12px;color:#d4af37">Voice Rooms LIVE •</h3>
+<div class="room"><div><b>🎙️ Chill Night Talk</b><br><small>Host AMIRA • 1.2k</small></div><button class="btn" onclick="joinRoom('Chill Night Talk')">دخول</button></div>
+<div class="room"><div><b>🎙️ Game Strategy</b><br><small>Host SALMA • 980</small></div><button class="btn" onclick="joinRoom('Game Strategy')">دخول</button></div>
+
+<h3 style="padding:0 12px">Famous Stars</h3>
+<div class="stars"><div class="star"><div>⭐</div>NOOR<br><button class="btn" onclick="follow(this)">Follow</button></div><div class="star"><div>⭐</div>AMIRA<br><button class="btn" onclick="follow(this)">Follow</button></div><div class="star"><div>⭐</div>SARA<br><button class="btn" onclick="follow(this)">Follow</button></div></div>
+
+<div class="card"><h3>💬 محادثة DOS</h3><div id="chat" style="text-align:right;padding:10px;min-height:80px">أهلا بيك في DOS ❤️</div><input id="msg" placeholder="اكتب رسالة..."><button class="btn" onclick="send()">ابعت +10 coins</button></div>
+
+<div class="nav"><button class="on">🏠 الرئيسية</button><button onclick="playLudo()">🎲 لودو</button><button>🎙️ غرف</button><button>📝 منشور</button><button>👤 الملف</button></div>
 <script>
-function send(){
-let v=document.getElementById('myMsg').value;
-if(!v) return;
-let d=document.createElement('div');d.className='msg';d.innerHTML='<b>انت:</b> '+v;
-document.getElementById('msgs').appendChild(d);
-document.getElementById('myMsg').value='';
-document.getElementById('msgs').scrollTop=9999;
-}
-</script>
-</section>
-
-<footer style="padding:20px;color:#888">AHAD © 2026 - ألعاب ومحادثات وغرف عامة ❤️</footer>
-</body>
-</html>
+let coins=1200;
+function enter(){document.getElementById('login').style.display='none';alert('أهلا بيك في DOS! معاك 1200 كوين')}
+function playLudo(){let d=Math.floor(Math.random()*6)+1;coins+=20;document.getElementById('coin').innerText=coins;document.getElementById('ludo').innerText='رميت النرد وجالك '+d+' وكسبت 20 كوين! معاك دلوقتي '+coins;}
+function joinRoom(n){coins+=10;document.getElementById('coin').innerText=coins;alert('دخلت '+n+' وكسبت 10 كوين');}
+function follow(b){b.innerText='تم ✅';coins+=5;document.getElementById('coin').innerText=coins;}
+function send(){let m=document.getElementById('msg').value;if(!m)return;document.getElementById('chat').innerHTML+='<div>👤 انت: '+m+'</div>';coins+=10;document.getElementById('coin').innerText=coins;document.getElementById('msg').value='';}
+</script></body></html>
