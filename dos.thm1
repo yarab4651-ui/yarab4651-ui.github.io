@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DOS</title>
+<style>
+*{box-sizing:border-box;font-family:sans-serif}
+body{margin:0;background:#0a0a0a;color:#fff;text-align:center}
+header{background:#111;border-bottom:2px solid #d4af37;padding:20px}
+h1{color:#d4af37;font-size:42px;margin:0;letter-spacing:3px}
+.gold{color:#d4af37}
+.box{background:#151515;border:1px solid #d4af37;border-radius:16px;padding:20px;margin:15px}
+button{background:#d4af37;color:#000;border:0;padding:12px 20px;border-radius:10px;font-weight:900;cursor:pointer;width:100%;margin-top:10px}
+input{width:100%;padding:12px;border-radius:10px;border:1px solid #333;background:#222;color:#fff;margin-top:10px}
+.card{background:#1e1e1e;border-radius:14px;padding:16px;margin:10px}
+</style>
+</head>
+<body>
+<div id="login">
+<header><h1>DOS</h1><p>دوس - غرف صوتية - ألعاب - شات</p></header>
+<div class="box">
+<h2 class="gold">تسجيل الدخول</h2>
+<input id="num" placeholder="رقم الهاتف">
+<input id="pass" type="password" placeholder="كلمة السر">
+<button onclick="enter()">Join DOS Now</button>
+<p>سجل واحصل على 1200 Coins هدية</p>
+</div>
+</div>
+
+<div id="main" style="display:none">
+<header><h1>DOS</h1><p>أهلا بيك في دوس 🔥</p></header>
+<div class="box"><h2>🪙 رصيدك: <span class="gold">1200 Coins</span></h2><p>⭐ STARS | 🎙️ Voice Rooms | 🎲 Ludo</p></div>
+<div class="card"><h3>🎙️ غرف صوتية</h3><p>غرفة مصر - غرفة الخليج - غرفة الألعاب</p><button>ادخل الغرفة</button></div>
+<div class="card"><h3>🎲 لودو</h3><p>العب مع صحابك واكسب Coins</p><button>العب لودو</button></div>
+<div class="card"><h3>💬 شات عام</h3><p>اتكلم مع كل الناس</p><button>افتح الشات</button></div>
+<div class="card"><h3>⭐ شحن STARS</h3><p>اشحن واكسب هدايا</p><button>اشحن الآن</button></div>
+</div>
+
+<script>
+function enter(){
+document.getElementById('login').style.display='none';
+document.getElementById('main').style.display='block';
+}
+</script>
+</body>
+</html>
